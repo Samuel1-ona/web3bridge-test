@@ -1,0 +1,73 @@
+body {
+  background-color: black;
+  color: limegreen;
+  font-family: monospace;
+}
+header {
+  text-align: center;
+}
+.login-section {
+  width: 25%;
+  margin: auto;
+}
+.input-box > label {
+  display: block;
+  font-size: 1.3rem;
+  margin: 0.5rem;
+}
+.input-box > input {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.1rem;
+  background-color: #111;
+  border: none;
+  border-radius: 1rem;
+  color: limegreen;
+  font-size: 1.2rem;
+}
+
+.button-box > button {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 1rem;
+  font-size: 1.2rem;
+  background-color: limegreen;
+  border: none;
+  border-radius: 1rem;
+}
+
+.quiz-section {
+  display: none;
+}
+.visible {
+  display: block;
+}
+.selected {
+  background-color: black;
+  color: yellowgreen;
+  padding: 1rem;
+  margin: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.info-section {
+  text-align: center;
+  letter-spacing: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.not-selected {
+  background-color: rgba(50, 205, 50, 0.5);
+  color: #111;
+  padding: 1rem;
+  margin: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.question-box {
+  background-color: white;
+  color: black;
+  font-size: 1.3rem;
+  padding: 0.4rem;
+  margin: 0.5rem, 0;
+}

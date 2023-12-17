@@ -51,6 +51,7 @@ const Username = document.querySelector(".username");
 const LoginButton = document.querySelector(".login-button");
 const QuestionBox = document.querySelector(".question-box");
 const AnswerBox = document.querySelector(".answer-box");
+const QuizSection = document.querySelector(".quiz-section");
 
 let count = 1;
 let selectedOption;
@@ -68,6 +69,8 @@ function login() {
   alert("logged in successfully");
   //remove Login section from dom
   LoginSection.remove();
+  //show Quiz section
+  QuizSection.classList.add("visible");
   //populate the quiz
   populateQuiz();
 }
@@ -77,7 +80,7 @@ const populateQuiz = () => {
   QuestionBox.innerHTML = FullQuestionsArray[count - 1].question;
   AnswerBox.innerHTML = "";
   for (let i = 0; i < 4; i++) {
-    AnswerBox.innerHTML += `<p class='options'>${
+    AnswerBox.innerHTML += `<p class='options not-selected'>${
       FullQuestionsArray[count - 1].options[i]
     }</p>`;
   }
@@ -93,9 +96,14 @@ const populateQuiz = () => {
     FullQuestionsArray.length
   }`;
 
-  options.forEach((option) =>
-    option.addEventListener("click", () => (selectedOption = option))
-  );
+  options.forEach((option) => {
+    option.addEventListener("click", () => {
+      selectedOption = option;
+      option.classList.remove("not-selected");
+      option.classList.add("selected");
+      console.log(option);
+    });
+  });
   QuizButton.addEventListener("click", submit);
 };
 
